@@ -3,369 +3,204 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Prerana R K — Analytics Engineer</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<title>Prerana R K — Data & Analytics Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --ink: #0f1117; --paper: #f5f2eb; --accent: #c84b2f; --accent2: #2563a8;
+  --muted: #6b6b6b; --border: #d4cfc5; --card: #fffdf8; --green: #16a34a;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink); font-size: 16px; line-height: 1.6; overflow-x: hidden; }
 
-  :root {
-    --ink: #0f1117;
-    --paper: #f5f2eb;
-    --accent: #c84b2f;
-    --accent2: #2563a8;
-    --muted: #6b6b6b;
-    --border: #d4cfc5;
-    --card: #fffdf8;
-  }
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1.2rem 3rem;
+  background: rgba(245,242,235,0.93); backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo { font-family: 'DM Serif Display', serif; font-size: 1.1rem; color: var(--ink); text-decoration: none; }
+.nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
+.nav-links a { text-decoration: none; color: var(--muted); font-size: 0.85rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; transition: color 0.2s; }
+.nav-links a:hover { color: var(--accent); }
+.nav-cta { background: var(--accent) !important; color: white !important; padding: 0.45rem 1.1rem; border-radius: 3px; }
+.nav-cta:hover { background: #a83a20 !important; }
 
-  html { scroll-behavior: smooth; }
+/* HERO */
+.hero {
+  min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr;
+  padding: 0 3rem; padding-top: 80px; gap: 4rem; align-items: center;
+  background: var(--paper);
+}
+.hero-text { }
+.hero-tag {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: var(--accent);
+  background: rgba(200,75,47,0.08); padding: 0.3rem 0.8rem; border-radius: 2px;
+  margin-bottom: 1.5rem; letter-spacing: 0.05em;
+}
+.hero-tag::before { content: '▸'; }
+h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 1.5rem;
+}
+h1 em { font-style: italic; color: var(--accent); }
+.hero-sub { font-size: 1.05rem; color: var(--muted); max-width: 480px; margin-bottom: 2.5rem; font-weight: 300; line-height: 1.7; }
+.hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--accent); color: white; padding: 0.85rem 2rem; border-radius: 3px;
+  text-decoration: none; font-weight: 600; font-size: 0.9rem; letter-spacing: 0.02em; transition: all 0.2s;
+}
+.btn-primary:hover { background: #a83a20; transform: translateY(-1px); }
+.btn-secondary {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: transparent; color: var(--ink); padding: 0.85rem 2rem; border-radius: 3px;
+  text-decoration: none; font-weight: 500; font-size: 0.9rem;
+  border: 1.5px solid var(--ink); transition: all 0.2s;
+}
+.btn-secondary:hover { background: var(--ink); color: var(--paper); }
+.hero-right { display: flex; flex-direction: column; gap: 1rem; }
+.stat-card {
+  background: var(--card); border: 1px solid var(--border); border-radius: 6px;
+  padding: 1.4rem 1.8rem; display: flex; align-items: center; gap: 1.2rem;
+  animation: slideIn 0.6s ease both;
+}
+.stat-card:nth-child(2) { animation-delay: 0.1s; margin-left: 2rem; }
+.stat-card:nth-child(3) { animation-delay: 0.2s; }
+.stat-card:nth-child(4) { animation-delay: 0.3s; margin-left: 2rem; }
+@keyframes slideIn { from { opacity: 0; transform: translateX(20px); } to { opacity: 1; transform: translateX(0); } }
+.stat-num { font-family: 'DM Serif Display', serif; font-size: 2rem; color: var(--accent); line-height: 1; white-space: nowrap; }
+.stat-label { font-size: 0.85rem; color: var(--muted); line-height: 1.4; }
 
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--paper);
-    color: var(--ink);
-    font-size: 16px;
-    line-height: 1.6;
-    overflow-x: hidden;
-  }
+/* SECTIONS */
+section { padding: 6rem 3rem; }
+.section-label { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.8rem; }
+h2 { font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem, 3vw, 2.8rem); line-height: 1.15; letter-spacing: -0.01em; margin-bottom: 1rem; }
+.section-intro { font-size: 1rem; color: var(--muted); max-width: 560px; margin-bottom: 3.5rem; font-weight: 300; line-height: 1.7; }
 
-  /* NAV */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 1.2rem 3rem;
-    background: rgba(245,242,235,0.92);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
-  }
-  .nav-logo {
-    font-family: 'DM Serif Display', serif;
-    font-size: 1.1rem;
-    color: var(--ink);
-    text-decoration: none;
-  }
-  .nav-links { display: flex; gap: 2rem; list-style: none; }
-  .nav-links a { text-decoration: none; color: var(--muted); font-size: 0.88rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; transition: color 0.2s; }
-  .nav-links a:hover { color: var(--accent); }
+/* DASHBOARD SPOTLIGHT */
+#dashboards { background: var(--ink); }
+#dashboards .section-label { color: #f0a080; }
+#dashboards h2 { color: var(--paper); }
+#dashboards .section-intro { color: rgba(245,242,235,0.55); }
+.dashboard-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 2px; background: rgba(255,255,255,0.08); }
+.dashboard-main { background: #161a24; padding: 3rem; display: flex; flex-direction: column; justify-content: space-between; min-height: 380px; }
+.dashboard-main h3 { font-family: 'DM Serif Display', serif; font-size: 1.8rem; color: var(--paper); margin-bottom: 1rem; line-height: 1.2; }
+.dashboard-main p { font-size: 0.9rem; color: rgba(245,242,235,0.55); line-height: 1.7; margin-bottom: 1rem; }
+.dashboard-price { font-family: 'JetBrains Mono', monospace; font-size: 1.1rem; color: #f0a080; margin-bottom: 0.4rem; }
+.dashboard-delivery { font-size: 0.78rem; color: rgba(245,242,235,0.35); }
+.deliver-tag { display: inline-block; font-size: 0.7rem; font-family: 'JetBrains Mono', monospace; padding: 0.2rem 0.6rem; border-radius: 2px; margin-top: 0.6rem; background: rgba(22,163,74,0.15); color: #4ade80; }
+.dashboard-side { display: flex; flex-direction: column; gap: 2px; }
+.dashboard-mini { background: #1a1f2e; padding: 2rem; flex: 1; transition: background 0.2s; }
+.dashboard-mini:hover { background: #1e2433; }
+.dashboard-mini h4 { font-size: 0.95rem; font-weight: 600; color: var(--paper); margin-bottom: 0.5rem; }
+.dashboard-mini p { font-size: 0.82rem; color: rgba(245,242,235,0.45); line-height: 1.6; margin-bottom: 0.6rem; }
+.mini-price { font-family: 'JetBrains Mono', monospace; font-size: 0.82rem; color: #f0a080; }
 
-  /* HERO */
-  .hero {
-    min-height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 3rem;
-    padding-top: 80px;
-    gap: 4rem;
-    align-items: center;
-    position: relative;
-    background: var(--paper);
-  }
-  .hero::before {
-    display: none;
-  }
-  .hero-text { }
-  .hero-tag {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.78rem;
-    color: var(--accent);
-    background: rgba(200,75,47,0.08);
-    padding: 0.3rem 0.8rem;
-    border-radius: 2px;
-    margin-bottom: 1.5rem;
-    letter-spacing: 0.05em;
-  }
-  .hero-tag::before { content: '▸'; }
-  h1 {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(2.8rem, 5vw, 4.5rem);
-    line-height: 1.05;
-    letter-spacing: -0.02em;
-    margin-bottom: 1.5rem;
-    color: var(--ink);
-  }
-  h1 em {
-    font-style: italic;
-    color: var(--accent);
-  }
-  .hero-sub {
-    font-size: 1.05rem;
-    color: var(--muted);
-    max-width: 480px;
-    margin-bottom: 2.5rem;
-    font-weight: 300;
-    line-height: 1.7;
-  }
-  .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
-  .btn-primary {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    background: var(--accent);
-    color: white;
-    padding: 0.85rem 2rem;
-    border-radius: 3px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.9rem;
-    letter-spacing: 0.02em;
-    transition: all 0.2s;
-  }
-  .btn-primary:hover { background: #a83a20; transform: translateY(-1px); }
-  .btn-secondary {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    background: transparent;
-    color: var(--ink);
-    padding: 0.85rem 2rem;
-    border-radius: 3px;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 0.9rem;
-    border: 1.5px solid var(--ink);
-    transition: all 0.2s;
-  }
-  .btn-secondary:hover { background: var(--ink); color: var(--paper); }
+/* ALL SERVICES */
+#services { background: var(--paper); }
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5px; background: rgba(0,0,0,0.06); border: 1.5px solid rgba(0,0,0,0.06); }
+.service-card { background: var(--card); padding: 2.5rem 2rem; position: relative; transition: background 0.2s; }
+.service-card:hover { background: #fffef5; }
+.service-num { font-family: 'DM Serif Display', serif; font-size: 3rem; color: rgba(0,0,0,0.04); position: absolute; top: 1rem; right: 1.5rem; line-height: 1; }
+.service-icon { font-size: 1.8rem; margin-bottom: 1.2rem; }
+.service-card h3 { font-family: 'DM Serif Display', serif; font-size: 1.2rem; margin-bottom: 0.8rem; }
+.service-card p { font-size: 0.87rem; color: var(--muted); line-height: 1.7; margin-bottom: 1.5rem; }
+.service-price { font-family: 'JetBrains Mono', monospace; font-size: 0.82rem; color: var(--accent); padding: 0.35rem 0.8rem; background: rgba(200,75,47,0.08); border-radius: 2px; display: inline-block; }
+.service-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1rem; }
+.tag { font-size: 0.7rem; font-family: 'JetBrains Mono', monospace; padding: 0.22rem 0.6rem; background: var(--paper); border: 1px solid var(--border); border-radius: 2px; color: var(--muted); }
 
-  .hero-right {
-    display: flex; flex-direction: column; gap: 1rem;
-  }
-  .stat-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 1.4rem 1.8rem;
-    display: flex; align-items: center; gap: 1.2rem;
-    animation: slideIn 0.6s ease both;
-  }
-  .stat-card:nth-child(2) { animation-delay: 0.1s; margin-left: 2rem; }
-  .stat-card:nth-child(3) { animation-delay: 0.2s; }
-  .stat-card:nth-child(4) { animation-delay: 0.3s; margin-left: 2rem; }
-  @keyframes slideIn { from { opacity: 0; transform: translateX(20px); } to { opacity: 1; transform: translateX(0); } }
-  .stat-num {
-    font-family: 'DM Serif Display', serif;
-    font-size: 2rem;
-    color: var(--accent);
-    line-height: 1;
-    white-space: nowrap;
-  }
-  .stat-label { font-size: 0.85rem; color: var(--muted); line-height: 1.4; }
+/* CASE STUDIES */
+#work { background: #f0ece3; }
+.cases-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.case-card { background: var(--card); border: 1px solid var(--border); border-radius: 6px; overflow: hidden; transition: transform 0.2s, box-shadow 0.2s; }
+.case-card:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(0,0,0,0.07); }
+.case-featured { grid-column: span 2; }
+.case-header { padding: 1.8rem 2rem; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; }
+.case-badge { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; padding: 0.25rem 0.65rem; border-radius: 2px; white-space: nowrap; }
+.badge-red { background: rgba(200,75,47,0.1); color: var(--accent); }
+.badge-blue { background: rgba(37,99,168,0.1); color: var(--accent2); }
+.badge-green { background: rgba(22,163,74,0.1); color: var(--green); }
+.badge-purple { background: rgba(124,58,237,0.1); color: #7c3aed; }
+.case-header h3 { font-family: 'DM Serif Display', serif; font-size: 1.2rem; line-height: 1.2; }
+.case-body { padding: 1.8rem 2rem; }
+.case-problem { font-size: 0.87rem; color: var(--muted); margin-bottom: 1.5rem; line-height: 1.7; }
+.case-cols { display: grid; gap: 1.2rem; margin-bottom: 1.2rem; }
+.case-cols-2 { grid-template-columns: 1fr 1fr; }
+.case-cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+.case-col-title { font-size: 0.68rem; font-family: 'JetBrains Mono', monospace; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 0.4rem; }
+.case-col-body { font-size: 0.84rem; line-height: 1.6; }
+.impact-pill { display: inline-flex; align-items: center; font-size: 0.8rem; font-weight: 600; padding: 0.25rem 0.7rem; border-radius: 20px; margin: 0.2rem 0.2rem 0 0; }
+.pill-red { background: rgba(200,75,47,0.1); color: var(--accent); }
+.pill-blue { background: rgba(37,99,168,0.1); color: var(--accent2); }
+.pill-green { background: rgba(22,163,74,0.1); color: var(--green); }
+.tools-row { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1rem; }
+.tool-chip { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; padding: 0.25rem 0.65rem; background: var(--paper); border: 1px solid var(--border); border-radius: 3px; color: var(--muted); }
 
-  /* SECTIONS */
-  section { padding: 6rem 3rem; }
-  .section-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.75rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 0.8rem;
-  }
-  h2 {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(1.8rem, 3vw, 2.8rem);
-    line-height: 1.15;
-    letter-spacing: -0.01em;
-    margin-bottom: 1rem;
-  }
-  .section-intro { font-size: 1rem; color: var(--muted); max-width: 560px; margin-bottom: 3.5rem; font-weight: 300; }
+/* ABOUT */
+#about { background: var(--paper); }
+.about-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 5rem; align-items: start; }
+.about-left p { font-size: 0.95rem; color: var(--muted); line-height: 1.8; margin-bottom: 1rem; margin-top: 1.2rem; }
+.cred-list { list-style: none; margin-top: 2rem; }
+.cred-list li { display: flex; align-items: flex-start; gap: 0.8rem; font-size: 0.88rem; color: var(--ink); padding: 0.8rem 0; border-bottom: 1px solid var(--border); line-height: 1.5; }
+.cred-list li::before { content: '✦'; color: var(--accent); font-size: 0.7rem; margin-top: 0.2rem; flex-shrink: 0; }
+.stack-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.stack-item { background: var(--card); border: 1px solid var(--border); border-radius: 4px; padding: 1.2rem; }
+.stack-label { font-size: 0.68rem; font-family: 'JetBrains Mono', monospace; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 0.5rem; }
+.stack-tools { font-size: 0.83rem; color: var(--muted); line-height: 1.6; }
 
-  /* SERVICES */
-  #services { background: var(--ink); color: var(--paper); }
-  #services .section-label { color: #f0a080; }
-  #services h2 { color: var(--paper); }
-  #services .section-intro { color: rgba(245,242,235,0.6); }
-  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5px; background: rgba(255,255,255,0.1); border: 1.5px solid rgba(255,255,255,0.1); }
-  .service-card {
-    background: #161a24;
-    padding: 2.5rem 2rem;
-    position: relative;
-    transition: background 0.25s;
-  }
-  .service-card:hover { background: #1e2433; }
-  .service-num {
-    font-family: 'DM Serif Display', serif;
-    font-size: 3rem;
-    color: rgba(255,255,255,0.06);
-    position: absolute;
-    top: 1rem; right: 1.5rem;
-    line-height: 1;
-  }
-  .service-icon { font-size: 1.8rem; margin-bottom: 1.2rem; }
-  .service-card h3 { font-family: 'DM Serif Display', serif; font-size: 1.3rem; color: var(--paper); margin-bottom: 0.8rem; }
-  .service-card p { font-size: 0.88rem; color: rgba(245,242,235,0.55); line-height: 1.7; margin-bottom: 1.5rem; }
-  .service-price {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.82rem;
-    color: #f0a080;
-    padding: 0.4rem 0.8rem;
-    background: rgba(200,75,47,0.15);
-    border-radius: 2px;
-    display: inline-block;
-  }
-  .service-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1rem; }
-  .tag {
-    font-size: 0.72rem;
-    font-family: 'JetBrains Mono', monospace;
-    padding: 0.25rem 0.6rem;
-    background: rgba(255,255,255,0.06);
-    border-radius: 2px;
-    color: rgba(245,242,235,0.4);
-  }
+/* PROJECTS TABLE */
+#projects { background: #f0ece3; }
+.proj-table { width: 100%; border-collapse: collapse; }
+.proj-table th { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); padding: 0.8rem 1rem; text-align: left; border-bottom: 2px solid var(--border); }
+.proj-table td { padding: 1rem; font-size: 0.87rem; border-bottom: 1px solid var(--border); vertical-align: top; line-height: 1.5; }
+.proj-table tr:hover td { background: rgba(200,75,47,0.03); }
+.proj-name { font-weight: 600; color: var(--ink); }
+.proj-stack { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--muted); }
+.proj-impact { color: var(--accent); font-weight: 500; }
 
-  /* CASE STUDIES */
-  #work { background: var(--paper); }
-  .cases-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
-  .case-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    overflow: hidden;
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  .case-card:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(0,0,0,0.08); }
-  .case-card:first-child { grid-column: span 2; }
-  .case-featured { grid-column: span 2; }
-  .case-header {
-    padding: 2rem;
-    border-bottom: 1px solid var(--border);
-    display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem;
-  }
-  .case-badge {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.7rem;
-    padding: 0.3rem 0.7rem;
-    border-radius: 2px;
-    white-space: nowrap;
-  }
-  .badge-red { background: rgba(200,75,47,0.1); color: var(--accent); }
-  .badge-blue { background: rgba(37,99,168,0.1); color: var(--accent2); }
-  .badge-green { background: rgba(22,163,74,0.1); color: #16a34a; }
-  .badge-purple { background: rgba(124,58,237,0.1); color: #7c3aed; }
-  .case-header h3 { font-family: 'DM Serif Display', serif; font-size: 1.3rem; line-height: 1.2; }
-  .case-body { padding: 2rem; }
-  .case-problem { font-size: 0.88rem; color: var(--muted); margin-bottom: 1.5rem; line-height: 1.7; }
-  .case-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem; }
-  .case-row.two { grid-template-columns: 1fr 1fr; }
-  .case-section-title { font-size: 0.7rem; font-family: 'JetBrains Mono', monospace; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 0.5rem; }
-  .case-section-body { font-size: 0.85rem; line-height: 1.6; }
-  .impact-pill {
-    display: inline-flex; align-items: center; gap: 0.4rem;
-    font-size: 0.82rem; font-weight: 600;
-    padding: 0.3rem 0.8rem;
-    border-radius: 20px;
-    margin: 0.2rem 0.2rem 0 0;
-  }
-  .pill-red { background: rgba(200,75,47,0.1); color: var(--accent); }
-  .pill-blue { background: rgba(37,99,168,0.1); color: var(--accent2); }
-  .pill-green { background: rgba(22,163,74,0.1); color: #16a34a; }
-  .tools-row { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1rem; }
-  .tool-chip {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.72rem;
-    padding: 0.3rem 0.7rem;
-    background: var(--paper);
-    border: 1px solid var(--border);
-    border-radius: 3px;
-    color: var(--muted);
-  }
+/* PROCESS */
+#process { background: var(--paper); }
+.process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; position: relative; }
+.process-steps::before { content: ''; position: absolute; top: 2rem; left: 2rem; right: 2rem; height: 1px; background: var(--border); z-index: 0; }
+.step { padding: 0 1.5rem 0 0; position: relative; z-index: 1; }
+.step-num { width: 4rem; height: 4rem; background: var(--card); border: 1px solid var(--border); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'DM Serif Display', serif; font-size: 1.4rem; color: var(--accent); margin-bottom: 1.5rem; }
+.step h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; }
+.step p { font-size: 0.85rem; color: var(--muted); line-height: 1.7; }
 
-  /* ABOUT */
-  #about { background: #f0ece3; }
-  .about-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 5rem; align-items: start; }
-  .about-left h2 { margin-bottom: 1.5rem; }
-  .about-left p { font-size: 0.95rem; color: var(--muted); line-height: 1.8; margin-bottom: 1rem; }
-  .credibility-list { list-style: none; margin-top: 2rem; }
-  .credibility-list li {
-    display: flex; align-items: flex-start; gap: 0.8rem;
-    font-size: 0.88rem; color: var(--ink);
-    padding: 0.8rem 0;
-    border-bottom: 1px solid var(--border);
-    line-height: 1.5;
-  }
-  .credibility-list li::before { content: '✦'; color: var(--accent); font-size: 0.7rem; margin-top: 0.2rem; flex-shrink: 0; }
-  .stack-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-  .stack-item {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 1.2rem;
-  }
-  .stack-item-label { font-size: 0.7rem; font-family: 'JetBrains Mono', monospace; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 0.5rem; }
-  .stack-item-tools { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+/* CONTACT */
+#contact { background: var(--accent); color: white; text-align: center; padding: 6rem 3rem; }
+#contact h2 { color: white; font-size: clamp(2rem, 4vw, 3.5rem); margin-bottom: 1rem; }
+#contact p { color: rgba(255,255,255,0.75); font-size: 1.05rem; margin-bottom: 2.5rem; font-weight: 300; }
+.contact-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+.btn-white { display: inline-flex; align-items: center; gap: 0.5rem; background: white; color: var(--accent); padding: 0.9rem 2.2rem; border-radius: 3px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: all 0.2s; }
+.btn-white:hover { background: var(--paper); transform: translateY(-1px); }
+.btn-outline-white { display: inline-flex; align-items: center; gap: 0.5rem; background: transparent; color: white; padding: 0.9rem 2.2rem; border-radius: 3px; text-decoration: none; font-weight: 500; font-size: 0.9rem; border: 1.5px solid rgba(255,255,255,0.5); transition: all 0.2s; }
+.btn-outline-white:hover { background: rgba(255,255,255,0.1); }
 
-  /* PROCESS */
-  #process { background: var(--paper); }
-  .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; position: relative; }
-  .process-steps::before {
-    content: '';
-    position: absolute;
-    top: 2rem; left: 2rem; right: 2rem;
-    height: 1px;
-    background: var(--border);
-    z-index: 0;
-  }
-  .step { padding: 0 1.5rem 0 0; position: relative; z-index: 1; }
-  .step-num {
-    width: 4rem; height: 4rem;
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'DM Serif Display', serif;
-    font-size: 1.4rem;
-    color: var(--accent);
-    margin-bottom: 1.5rem;
-  }
-  .step h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; }
-  .step p { font-size: 0.85rem; color: var(--muted); line-height: 1.7; }
+footer { background: var(--ink); color: rgba(255,255,255,0.3); text-align: center; padding: 1.5rem 3rem; font-size: 0.78rem; font-family: 'JetBrains Mono', monospace; width: 100%; display: block; }
 
-  /* CTA */
-  #contact {
-    background: var(--accent);
-    color: white;
-    text-align: center;
-    padding: 6rem 3rem;
-  }
-  #contact h2 { color: white; font-size: clamp(2rem, 4vw, 3.5rem); margin-bottom: 1rem; }
-  #contact p { color: rgba(255,255,255,0.75); font-size: 1.05rem; margin-bottom: 2.5rem; font-weight: 300; }
-  .contact-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
-  .btn-white {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    background: white; color: var(--accent);
-    padding: 0.9rem 2.2rem; border-radius: 3px;
-    text-decoration: none; font-weight: 600; font-size: 0.9rem;
-    transition: all 0.2s;
-  }
-  .btn-white:hover { background: var(--paper); transform: translateY(-1px); }
-  .btn-outline-white {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    background: transparent; color: white;
-    padding: 0.9rem 2.2rem; border-radius: 3px;
-    text-decoration: none; font-weight: 500; font-size: 0.9rem;
-    border: 1.5px solid rgba(255,255,255,0.5);
-    transition: all 0.2s;
-  }
-  .btn-outline-white:hover { background: rgba(255,255,255,0.1); }
-
-  footer {
-    background: var(--ink); color: rgba(255,255,255,0.3);
-    text-align: center; padding: 1.5rem 3rem;
-    font-size: 0.8rem; font-family: 'JetBrains Mono', monospace;
-    width: 100%; display: block; box-sizing: border-box;
-  }
-
-  @media (max-width: 900px) {
-    .hero { grid-template-columns: 1fr; padding: 6rem 1.5rem 3rem; }
-    .hero::before { display: none; }
-    .services-grid { grid-template-columns: 1fr; }
-    .cases-grid { grid-template-columns: 1fr; }
-    .case-card:first-child { grid-column: span 1; }
-    .case-featured { grid-column: span 1; }
-    .case-row { grid-template-columns: 1fr; }
-    .about-grid { grid-template-columns: 1fr; gap: 2rem; }
-    .process-steps { grid-template-columns: 1fr 1fr; }
-    section { padding: 4rem 1.5rem; }
-    nav { padding: 1rem 1.5rem; }
-    .nav-links { display: none; }
-  }
+@media (max-width: 900px) {
+  nav { padding: 1rem 1.5rem; }
+  .nav-links { display: none; }
+  .hero { grid-template-columns: 1fr; padding: 6rem 1.5rem 3rem; }
+  .dashboard-grid { grid-template-columns: 1fr; }
+  .services-grid { grid-template-columns: 1fr; }
+  .cases-grid { grid-template-columns: 1fr; }
+  .case-featured { grid-column: span 1; }
+  .case-cols-2, .case-cols-3 { grid-template-columns: 1fr; }
+  .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .stack-grid { grid-template-columns: 1fr; }
+  .process-steps { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .process-steps::before { display: none; }
+  section { padding: 4rem 1.5rem; }
+  .proj-table { font-size: 0.82rem; }
+}
 </style>
 </head>
 <body>
@@ -373,110 +208,139 @@
 <nav>
   <a href="#" class="nav-logo">Prerana R K.</a>
   <ul class="nav-links">
+    <li><a href="#dashboards">Dashboards</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#work">Work</a></li>
     <li><a href="#about">About</a></li>
-    <li><a href="#process">Process</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#contact" class="nav-cta">Hire Me</a></li>
   </ul>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-text">
-    <div class="hero-tag">Analytics Engineer & BI Consultant</div>
-    <h1>Amazon-grade <em>analytics,</em> built for your business.</h1>
-    <p class="hero-sub">I help e-commerce and data-driven companies build scalable data platforms, executive dashboards, and self-serve analytics — the same way I've done it at Amazon for 5+ years.</p>
+    <div class="hero-tag">Analytics Engineer &amp; BI Consultant</div>
+    <h1>Dashboards &amp; data platforms that <em>drive decisions.</em></h1>
+    <p class="hero-sub">I build executive dashboards, ETL pipelines and self-serve analytics for e-commerce and data-driven businesses — the same way I've done it at Amazon for 5+ years.</p>
     <div class="hero-ctas">
-      <a href="#contact" class="btn-primary">📩 Book a free consult</a>
+      <a href="#dashboards" class="btn-primary">📊 Dashboard services</a>
       <a href="#work" class="btn-secondary">View case studies →</a>
     </div>
   </div>
   <div class="hero-right">
     <div class="stat-card">
-      <div class="stat-num">Multi-million £</div>
-      <div class="stat-label">Fraud exposure recovered through<br>analytics models built at Amazon</div>
+      <div class="stat-num">800+</div>
+      <div class="stat-label">Reporting hours automated annually<br>through dashboards &amp; pipelines</div>
     </div>
     <div class="stat-card">
-      <div class="stat-num">1,500+</div>
-      <div class="stat-label">Operational hours saved annually<br>through automation & pipelines</div>
+      <div class="stat-num">60%</div>
+      <div class="stat-label">Reduction in ad-hoc data requests<br>through self-serve analytics</div>
     </div>
     <div class="stat-card">
       <div class="stat-num">5+</div>
-      <div class="stat-label">Years building data platforms<br>at Amazon UK & India</div>
+      <div class="stat-label">Years building data platforms<br>at Amazon UK &amp; India</div>
     </div>
     <div class="stat-card">
       <div class="stat-num">50+</div>
-      <div class="stat-label">Stakeholders enabled with<br>self-serve analytics</div>
+      <div class="stat-label">Stakeholders enabled with<br>self-serve analytics tools</div>
     </div>
   </div>
 </section>
 
-<!-- SERVICES -->
+<!-- DASHBOARD SPOTLIGHT -->
+<section id="dashboards">
+  <div class="section-label">// most popular</div>
+  <h2>Dashboard &amp; Reporting Services</h2>
+  <p class="section-intro">The fastest way to get visibility into your business. Fixed price, clear deliverables, ready to use.</p>
+  <div class="dashboard-grid">
+    <div class="dashboard-main">
+      <div>
+        <h3>Executive KPI Dashboard</h3>
+        <p>A single source of truth for your key business metrics — revenue, conversion, churn, growth. Built clean, documented and handed over so your whole team can use it independently.</p>
+        <p>Includes KPI definition, data model, dashboard build, filters by time/market/category and a handover walkthrough session.</p>
+      </div>
+      <div>
+        <div class="dashboard-price">£800 – £2,000</div>
+        <div class="dashboard-delivery">Fixed price · 5–10 day delivery</div>
+        <span class="deliver-tag">⚡ Fast turnaround</span>
+      </div>
+    </div>
+    <div class="dashboard-side">
+      <div class="dashboard-mini">
+        <h4>Automated Weekly Reporting</h4>
+        <p>Replace manual reports with dashboards that update themselves. Built once, runs forever.</p>
+        <div class="mini-price">£500 – £1,200</div>
+        <span class="deliver-tag">⚡ 3–5 days</span>
+      </div>
+      <div class="dashboard-mini">
+        <h4>Self-Serve Analytics Setup</h4>
+        <p>Enable your team to answer their own data questions without waiting on a data analyst every time.</p>
+        <div class="mini-price">£1,000 – £2,500</div>
+        <span class="deliver-tag">⚡ 7–10 days</span>
+      </div>
+      <div class="dashboard-mini">
+        <h4>Dashboard Audit &amp; Fix</h4>
+        <p>Slow, broken or confusing dashboards? I'll diagnose and rebuild them properly.</p>
+        <div class="mini-price">£300 – £800</div>
+        <span class="deliver-tag">⚡ 2–3 days</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ALL SERVICES -->
 <section id="services">
-  <div class="section-label">// what I offer</div>
-  <h2>Services & Packages</h2>
+  <div class="section-label">// full service list</div>
+  <h2>All Services</h2>
   <p class="section-intro">Fixed-price packages so you know exactly what you're getting — no surprises, no scope creep.</p>
   <div class="services-grid">
     <div class="service-card">
       <div class="service-num">01</div>
       <div class="service-icon">📊</div>
-      <h3>Analytics & BI Setup</h3>
+      <h3>Analytics &amp; BI Setup</h3>
       <p>KPI definition, clean data models, and executive dashboards built from scratch. You'll walk away with a reliable single source of truth your whole team can use.</p>
-      <div class="service-price">£1,500 – £3,000</div>
-      <div class="service-tags">
-        <span class="tag">SQL</span><span class="tag">QuickSight</span><span class="tag">Power BI</span><span class="tag">Redshift</span><span class="tag">Data Modelling</span>
-      </div>
+      <div class="service-price">£800 – £2,000</div>
+      <div class="service-tags"><span class="tag">SQL</span><span class="tag">QuickSight</span><span class="tag">Power BI</span><span class="tag">Redshift</span><span class="tag">Data Modelling</span></div>
     </div>
     <div class="service-card">
       <div class="service-num">02</div>
       <div class="service-icon">🔧</div>
-      <h3>ETL Pipeline & Data Engineering</h3>
+      <h3>ETL Pipeline &amp; Data Engineering</h3>
       <p>Raw data is useless without clean pipelines. I'll design and build your data infrastructure — staging, fact tables, transforms — so your analysts can actually do their job.</p>
-      <div class="service-price">£2,000 – £4,500</div>
-      <div class="service-tags">
-        <span class="tag">AWS</span><span class="tag">Redshift</span><span class="tag">Python</span><span class="tag">ETL/ELT</span><span class="tag">Star Schema</span>
-      </div>
+      <div class="service-price">£1,500 – £4,500</div>
+      <div class="service-tags"><span class="tag">AWS</span><span class="tag">Redshift</span><span class="tag">Python</span><span class="tag">ETL/ELT</span><span class="tag">Star Schema</span></div>
     </div>
     <div class="service-card">
       <div class="service-num">03</div>
       <div class="service-icon">📈</div>
-      <h3>Growth & Funnel Analysis</h3>
+      <h3>Growth &amp; Funnel Analysis</h3>
       <p>Conversion funnel, cohort retention, revenue leakage — I dig into your data and surface the bottlenecks costing you money, with a clear action plan to fix them.</p>
-      <div class="service-price">£2,000 – £5,000</div>
-      <div class="service-tags">
-        <span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Cohort Analysis</span><span class="tag">Funnel Analytics</span>
-      </div>
+      <div class="service-price">£1,000 – £3,500</div>
+      <div class="service-tags"><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Cohort Analysis</span><span class="tag">Funnel Analytics</span></div>
     </div>
     <div class="service-card">
       <div class="service-num">04</div>
       <div class="service-icon">🤖</div>
-      <h3>Automation & Serverless Platforms</h3>
+      <h3>Automation &amp; Serverless Platforms</h3>
       <p>Manual processes that take days? I build serverless AWS platforms that do it in minutes — no engineering team required on your end to maintain them.</p>
-      <div class="service-price">£2,500 – £5,000</div>
-      <div class="service-tags">
-        <span class="tag">Lambda</span><span class="tag">API Gateway</span><span class="tag">S3</span><span class="tag">CodePipeline</span><span class="tag">Flask</span>
-      </div>
+      <div class="service-price">£2,000 – £5,000</div>
+      <div class="service-tags"><span class="tag">Lambda</span><span class="tag">API Gateway</span><span class="tag">S3</span><span class="tag">CodePipeline</span><span class="tag">Flask</span></div>
     </div>
     <div class="service-card">
       <div class="service-num">05</div>
       <div class="service-icon">🔍</div>
-      <h3>Fraud & Anomaly Detection</h3>
-      <p>I've recovered Multi-million £ in fraud at Amazon. I'll build rule-based or statistical anomaly detection on your transaction data before it costs you more than the fix.</p>
-      <div class="service-price">£2,000 – £4,000</div>
-      <div class="service-tags">
-        <span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Statistics</span><span class="tag">Redshift</span>
-      </div>
+      <h3>Fraud &amp; Anomaly Detection</h3>
+      <p>I've built fraud detection systems at Amazon scale. I'll apply rule-based or statistical anomaly detection to your transaction data before it costs you more than the fix.</p>
+      <div class="service-price">£1,500 – £4,000</div>
+      <div class="service-tags"><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Statistics</span><span class="tag">Redshift</span></div>
     </div>
     <div class="service-card">
       <div class="service-num">06</div>
       <div class="service-icon">🔄</div>
       <h3>Ongoing BI Retainer</h3>
       <p>Monthly reporting, new dashboards, ad-hoc analysis and stakeholder support. Your embedded analytics partner without the full-time hire cost.</p>
-      <div class="service-price">£1,500 – £4,000 / month</div>
-      <div class="service-tags">
-        <span class="tag">Reporting</span><span class="tag">Dashboards</span><span class="tag">Ad-hoc Analysis</span><span class="tag">Stakeholder Support</span>
-      </div>
+      <div class="service-price">£1,000 – £3,000 / month</div>
+      <div class="service-tags"><span class="tag">Reporting</span><span class="tag">Dashboards</span><span class="tag">Ad-hoc Analysis</span><span class="tag">Stakeholder Support</span></div>
     </div>
   </div>
 </section>
@@ -485,64 +349,90 @@
 <section id="work">
   <div class="section-label">// case studies</div>
   <h2>Selected Work</h2>
-  <p class="section-intro">Real projects, real numbers. All built during my time at Amazon — anonymised where appropriate.</p>
+  <p class="section-intro">Real projects, real impact. Built during my time at Amazon — numbers anonymised where appropriate.</p>
   <div class="cases-grid">
 
-    <!-- CASE 1 - FEATURED -->
+    <div class="case-card case-featured">
+      <div class="case-header">
+        <div>
+          <div class="case-badge badge-purple" style="margin-bottom:0.6rem;">Self-Serve Analytics</div>
+          <h3>Org-Wide Reporting Platform — 800+ Hours Automated</h3>
+        </div>
+        <div class="case-badge badge-green">BI &amp; Dashboards</div>
+      </div>
+      <div class="case-body">
+        <p class="case-problem">Leadership and product teams were routing every data question through the BI team — creating a backlog that delayed decisions and consumed 800+ hours of manual reporting work annually.</p>
+        <div class="case-cols case-cols-3">
+          <div>
+            <div class="case-col-title">What I Built</div>
+            <div class="case-col-body">QuickSight Q (GenBI) topics and a standardised metric layer covering 90% of business metrics — enabling anyone to answer their own data questions without BI involvement.</div>
+          </div>
+          <div>
+            <div class="case-col-title">Adoption</div>
+            <div class="case-col-body">Developed a product performance segmentation framework adopted organisation-wide by leadership for scaling and investment decisions.</div>
+          </div>
+          <div>
+            <div class="case-col-title">Impact</div>
+            <div class="case-col-body">
+              <span class="impact-pill pill-green">800+ reporting hours automated/year</span>
+              <span class="impact-pill pill-blue">60% fewer ad-hoc requests</span>
+              <span class="impact-pill pill-red">200+ analytical hours saved/quarter</span>
+            </div>
+          </div>
+        </div>
+        <div class="tools-row">
+          <span class="tool-chip">QuickSight Q</span><span class="tool-chip">GenBI</span><span class="tool-chip">SQL</span><span class="tool-chip">Redshift</span><span class="tool-chip">Data Modelling</span>
+        </div>
+      </div>
+    </div>
+
     <div class="case-card">
       <div class="case-header">
         <div>
-          <div class="case-badge badge-blue" style="margin-bottom:0.6rem;">Featured Project</div>
-          <h3>Serverless Stakeholder Sampling Platform</h3>
+          <div class="case-badge badge-blue" style="margin-bottom:0.6rem;">Automation</div>
+          <h3>Serverless Sampling Platform — 3 Days to 1 Hour</h3>
         </div>
-        <div class="case-badge badge-red">Automation</div>
       </div>
       <div class="case-body">
-        <p class="case-problem">A manual sampling process required 3 days of BI engineer involvement every time a stakeholder needed data — creating a bottleneck that blocked product decisions and wasted senior engineering time.</p>
-        <div class="case-row">
+        <p class="case-problem">A manual stakeholder process required 3 days of engineering involvement per request — blocking product decisions and wasting senior resource.</p>
+        <div class="case-cols case-cols-2">
           <div>
-            <div class="case-section-title">What I Built</div>
-            <div class="case-section-body">End-to-end serverless platform where stakeholders submit requests via a web UI — data is processed and delivered automatically, no BI involvement needed.</div>
+            <div class="case-col-title">What I Built</div>
+            <div class="case-col-body">End-to-end serverless platform — stakeholders submit via web UI, data is processed and delivered automatically. Zero engineering involvement required.</div>
           </div>
           <div>
-            <div class="case-section-title">Architecture</div>
-            <div class="case-section-body">Route 53 → API Gateway → Lambda → S3 → App Runner (Flask), deployed via CodePipeline / CodeBuild / CodeCommit CI/CD.</div>
-          </div>
-          <div>
-            <div class="case-section-title">Impact</div>
-            <div class="case-section-body">
-              <span class="impact-pill pill-red">3 days → &lt;1 hour</span>
-              <span class="impact-pill pill-blue">Zero BI dependency</span>
+            <div class="case-col-title">Impact</div>
+            <div class="case-col-body">
+              <span class="impact-pill pill-red">3 days → under 1 hour</span>
               <span class="impact-pill pill-green">Scales without headcount</span>
             </div>
           </div>
         </div>
         <div class="tools-row">
-          <span class="tool-chip">AWS Lambda</span><span class="tool-chip">API Gateway</span><span class="tool-chip">Route 53</span><span class="tool-chip">S3</span><span class="tool-chip">App Runner</span><span class="tool-chip">CodePipeline</span><span class="tool-chip">Flask</span><span class="tool-chip">Python</span>
+          <span class="tool-chip">Lambda</span><span class="tool-chip">API Gateway</span><span class="tool-chip">Route 53</span><span class="tool-chip">S3</span><span class="tool-chip">App Runner</span><span class="tool-chip">CodePipeline</span><span class="tool-chip">Flask</span>
         </div>
       </div>
     </div>
 
-    <!-- CASE 2 -->
     <div class="case-card">
       <div class="case-header">
         <div>
-          <div class="case-badge badge-red" style="margin-bottom:0.6rem;">Risk & Fraud</div>
+          <div class="case-badge badge-red" style="margin-bottom:0.6rem;">Risk &amp; Fraud</div>
           <h3>Fraud Detection Analytics Pipeline</h3>
         </div>
       </div>
       <div class="case-body">
-        <p class="case-problem">Fraudulent transactions were going undetected, with no systematic way to flag high-risk activity across millions of records.</p>
-        <div class="case-row two">
+        <p class="case-problem">Fraudulent transactions were going undetected across millions of records with no systematic flagging process in place.</p>
+        <div class="case-cols case-cols-2">
           <div>
-            <div class="case-section-title">What I Built</div>
-            <div class="case-section-body">SQL + Python-based detection models on Redshift identifying anomalous transaction patterns and flagging cases for review.</div>
+            <div class="case-col-title">What I Built</div>
+            <div class="case-col-body">SQL + Python detection models on Redshift identifying anomalous transaction patterns and routing high-risk cases for review.</div>
           </div>
           <div>
-            <div class="case-section-title">Impact</div>
-            <div class="case-section-body">
-              <span class="impact-pill pill-red">Multi-million $ exposure flagged</span>
-              <span class="impact-pill pill-green">~Multi-million £ recovered in 3 months</span>
+            <div class="case-col-title">Impact</div>
+            <div class="case-col-body">
+              <span class="impact-pill pill-red">Multi-million £ exposure flagged</span>
+              <span class="impact-pill pill-green">Majority recovered within 3 months</span>
             </div>
           </div>
         </div>
@@ -552,8 +442,7 @@
       </div>
     </div>
 
-    <!-- CASE 3 -->
-    <div class="case-card">
+    <div class="case-card case-featured">
       <div class="case-header">
         <div>
           <div class="case-badge badge-green" style="margin-bottom:0.6rem;">Data Engineering</div>
@@ -561,56 +450,27 @@
         </div>
       </div>
       <div class="case-body">
-        <p class="case-problem">Raw customer service data across 5TB+ had no structured analytical layer — reporting was slow, inconsistent and required engineering effort every time.</p>
-        <div class="case-row two">
+        <p class="case-problem">Raw customer service data across 5TB+ had no analytical layer — reporting was slow, inconsistent and required engineering effort every time.</p>
+        <div class="case-cols case-cols-3">
           <div>
-            <div class="case-section-title">What I Built</div>
-            <div class="case-section-body">Star schema data model with staging and fact tables on Redshift — the foundational layer enabling all downstream analytics and reporting.</div>
+            <div class="case-col-title">What I Built</div>
+            <div class="case-col-body">Star schema with staging and fact tables on Redshift — the foundational layer enabling all downstream analytics and reporting with consistent, reliable data.</div>
           </div>
           <div>
-            <div class="case-section-title">Impact</div>
-            <div class="case-section-body">
+            <div class="case-col-title">Scale</div>
+            <div class="case-col-body">Processing >5TB of customer service data. Led full Redshift cluster migration from DS2 to RA3 across 6 clusters, 32 nodes each, with zero downtime.</div>
+          </div>
+          <div>
+            <div class="case-col-title">Impact</div>
+            <div class="case-col-body">
               <span class="impact-pill pill-blue">80% ETL performance gain</span>
-              <span class="impact-pill pill-green">240TB saved annually</span>
+              <span class="impact-pill pill-green">240TB compute saved annually</span>
+              <span class="impact-pill pill-red">500 manual hours eliminated</span>
             </div>
           </div>
         </div>
         <div class="tools-row">
-          <span class="tool-chip">Redshift</span><span class="tool-chip">SQL</span><span class="tool-chip">Star Schema</span><span class="tool-chip">AWS Data Pipelines</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- CASE 4 -->
-    <div class="case-card case-featured">
-      <div class="case-header">
-        <div>
-          <div class="case-badge badge-purple" style="margin-bottom:0.6rem;">Self-Serve Analytics</div>
-          <h3>Org-Wide Self-Serve Analytics Platform — 50+ Stakeholders</h3>
-        </div>
-      </div>
-      <div class="case-body">
-        <p class="case-problem">Leadership and product teams were relying on the BI team for every data question — creating a 60%+ request backlog and slowing strategic decisions.</p>
-        <div class="case-row">
-          <div>
-            <div class="case-section-title">What I Built</div>
-            <div class="case-section-body">QuickSight Q (GenBI) topics and a standardised metric layer covering 90% of business metrics, enabling anyone in the org to answer their own questions.</div>
-          </div>
-          <div>
-            <div class="case-section-title">Adoption</div>
-            <div class="case-section-body">Rolled out a product performance segmentation framework adopted org-wide by leadership for scaling and investment decisions.</div>
-          </div>
-          <div>
-            <div class="case-section-title">Impact</div>
-            <div class="case-section-body">
-              <span class="impact-pill pill-blue">60% reduction in ad-hoc requests</span>
-              <span class="impact-pill pill-green">200+ analytical hours saved/quarter</span>
-              <span class="impact-pill pill-red">800+ reporting hours automated/year</span>
-            </div>
-          </div>
-        </div>
-        <div class="tools-row">
-          <span class="tool-chip">QuickSight Q</span><span class="tool-chip">GenBI</span><span class="tool-chip">SQL</span><span class="tool-chip">Redshift</span><span class="tool-chip">Data Modelling</span>
+          <span class="tool-chip">Redshift</span><span class="tool-chip">SQL</span><span class="tool-chip">Star Schema</span><span class="tool-chip">AWS Data Pipelines</span><span class="tool-chip">Route 53</span>
         </div>
       </div>
     </div>
@@ -623,15 +483,15 @@
   <div class="about-grid">
     <div class="about-left">
       <div class="section-label">// about</div>
-      <h2>Built at Amazon scale. Available for yours.</h2>
-      <p>I'm a BI & Analytics Engineer currently based in London, with 5+ years at Amazon building the data systems behind high-stakes product and business decisions.</p>
-      <p>I take on freelance projects where I can make a meaningful difference — not just deliver a dashboard, but actually change how a team uses data.</p>
-      <ul class="credibility-list">
-        <li>5+ years at Amazon UK & India across Data Engineering and BI</li>
-        <li>Built platforms processing multi-TB datasets on AWS Redshift</li>
-        <li>Delivered Multi-million £ fraud recovery through analytics models</li>
-        <li>Saved 1,500+ hours annually through automation and pipeline work</li>
-        <li>Enabled 50+ stakeholders with self-serve analytics tools</li>
+      <h2>Amazon scale.<br>Available for yours.</h2>
+      <p>I'm a Data &amp; Analytics Engineer based in London, currently at Amazon where I've spent 5+ years building the data systems behind high-stakes product and business decisions.</p>
+      <p>I take on freelance projects where I can make a real difference — not just deliver a dashboard, but change how a team uses data.</p>
+      <ul class="cred-list">
+        <li>5+ years at Amazon UK &amp; India across Data Engineering and BI</li>
+        <li>Built data platforms processing multi-TB datasets on AWS Redshift</li>
+        <li>800+ reporting hours automated annually through dashboards and pipelines</li>
+        <li>60% reduction in ad-hoc requests through self-serve analytics</li>
+        <li>Enabled 50+ stakeholders with self-serve reporting tools</li>
         <li>Computer Science degree, CGPA 9.04/10</li>
       </ul>
     </div>
@@ -639,28 +499,28 @@
       <div class="section-label" style="margin-bottom:1.2rem;">// tech stack</div>
       <div class="stack-grid">
         <div class="stack-item">
-          <div class="stack-item-label">Data Engineering</div>
-          <div class="stack-item-tools">SQL (advanced), Python, ETL/ELT, Star schema, Fact tables, dbt-style modelling</div>
+          <div class="stack-label">BI &amp; Dashboards</div>
+          <div class="stack-tools">Amazon QuickSight (advanced), QuickSight Q / GenBI, Power BI, MS Excel</div>
         </div>
         <div class="stack-item">
-          <div class="stack-item-label">Cloud — AWS</div>
-          <div class="stack-item-tools">Redshift, Lambda, S3, API Gateway, Route 53, App Runner, CloudFront, RDS, DynamoDB</div>
+          <div class="stack-label">Data Engineering</div>
+          <div class="stack-tools">SQL (advanced), Python, ETL/ELT, Star schema, Fact tables, dbt-style modelling</div>
         </div>
         <div class="stack-item">
-          <div class="stack-item-label">BI & Visualisation</div>
-          <div class="stack-item-tools">Amazon QuickSight (advanced), QuickSight Q / GenBI, Power BI, MS Excel</div>
+          <div class="stack-label">Cloud — AWS</div>
+          <div class="stack-tools">Redshift, Lambda, S3, API Gateway, Route 53, App Runner, CloudFront, RDS, DynamoDB</div>
         </div>
         <div class="stack-item">
-          <div class="stack-item-label">DevOps & CI/CD</div>
-          <div class="stack-item-tools">CodePipeline, CodeBuild, CodeCommit, Git, Serverless architecture, IAM</div>
+          <div class="stack-label">DevOps &amp; CI/CD</div>
+          <div class="stack-tools">CodePipeline, CodeBuild, CodeCommit, Git, Serverless architecture, IAM</div>
         </div>
         <div class="stack-item">
-          <div class="stack-item-label">Analytics</div>
-          <div class="stack-item-tools">Fraud detection, cohort analysis, funnel analytics, segmentation, self-serve enablement</div>
+          <div class="stack-label">Analytics</div>
+          <div class="stack-tools">Fraud detection, cohort analysis, funnel analytics, segmentation, KPI frameworks</div>
         </div>
         <div class="stack-item">
-          <div class="stack-item-label">AI & GenBI</div>
-          <div class="stack-item-tools">AI-powered analytics, GenBI tooling, datasets for AI-generated insights, automation</div>
+          <div class="stack-label">AI &amp; GenBI</div>
+          <div class="stack-tools">AI-powered analytics, GenBI tooling, datasets for AI-generated insights</div>
         </div>
       </div>
     </div>
@@ -681,17 +541,17 @@
     <div class="step">
       <div class="step-num">2</div>
       <h3>Scoped Proposal</h3>
-      <p>Fixed-price proposal with clear deliverables, timeline and what I need from you. No hourly surprises.</p>
+      <p>Fixed-price proposal with clear deliverables, timeline and exactly what I need from you. No hourly billing surprises.</p>
     </div>
     <div class="step">
       <div class="step-num">3</div>
-      <h3>Build & Iterate</h3>
-      <p>I build, you review. Weekly check-ins, Loom walkthroughs of progress, and rapid iterations based on your feedback.</p>
+      <h3>Build &amp; Iterate</h3>
+      <p>I build, you review. Regular check-ins and rapid iterations based on your feedback until it's exactly right.</p>
     </div>
     <div class="step">
       <div class="step-num">4</div>
-      <h3>Handover & Support</h3>
-      <p>Full documentation, training walkthrough, and 2 weeks of post-delivery support included in every project.</p>
+      <h3>Handover &amp; Support</h3>
+      <p>Full documentation, walkthrough session and 2 weeks of post-delivery support included in every project.</p>
     </div>
   </div>
 </section>
@@ -707,8 +567,8 @@
 </section>
 
 <footer>
-  <span id="footer-year"></span> Prerana R K &mdash; Senior Data &amp; Analytics Engineer, London UK
+  © <span id="yr"></span> Prerana R K — Senior Data &amp; Analytics Engineer, London UK
 </footer>
-<script>document.getElementById("footer-year").textContent = "© " + new Date().getFullYear();</script>
+<script>document.getElementById("yr").textContent = new Date().getFullYear();</script>
 </body>
 </html>
